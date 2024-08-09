@@ -1,6 +1,6 @@
 {
   "name": "react-native-mothra-ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Mothra ui is an essential library of React Native components, focused on simplicity and efficiency for mobile app development.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
