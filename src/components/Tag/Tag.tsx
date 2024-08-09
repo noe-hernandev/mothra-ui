@@ -1,20 +1,19 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import type { TagProps } from '../../utils/interfaces/Tag';
-import { getStatusColor } from '../../utils/functions/getStatusColor';
-import genLightenColor from '../../utils/functions/genLightenColor';
-
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import type { TagProps } from "../../utils/interfaces/Tag";
+import { getStatusColor } from "../../utils/functions/getStatusColor";
+import genLightenColor from "../../utils/functions/genLightenColor";
 
 const Tag = ({
   title,
-  status = 'default',
+  status = "default",
   color,
   solid,
   tagContainerStyle,
   tagTextStyle,
   borderLess,
   icon,
-  iconPosition = 'left',
+  iconPosition = "left",
 }: TagProps) => {
   const colorStatus = getStatusColor(status);
   const colorToShow = color ?? colorStatus;
@@ -22,7 +21,7 @@ const Tag = ({
   const enhancedIcon =
     icon &&
     React.cloneElement(icon, {
-      color: icon.props.color ?? solid ? "#FFF" : colorToShow,
+      color: (icon.props.color ?? solid) ? "#FFF" : colorToShow,
     });
 
   return (
@@ -37,18 +36,18 @@ const Tag = ({
         borderLess && { borderWidth: 0 },
       ]}
     >
-      {enhancedIcon && iconPosition === 'left' && enhancedIcon}
+      {enhancedIcon && iconPosition === "left" && enhancedIcon}
       <Text
         style={[
           {
-            color: solid ? '#FFF' : colorToShow,
+            color: solid ? "#FFF" : colorToShow,
           },
           tagTextStyle,
         ]}
       >
         {title}
       </Text>
-      {enhancedIcon && iconPosition === 'right' && enhancedIcon}
+      {enhancedIcon && iconPosition === "right" && enhancedIcon}
     </View>
   );
 };
@@ -57,11 +56,11 @@ const styles = StyleSheet.create({
   tagContainer: {
     paddingVertical: 3,
     paddingHorizontal: 7,
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
     borderRadius: 4,
     borderWidth: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 6,
   },
 });
